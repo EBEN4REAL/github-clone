@@ -3,12 +3,12 @@ body {
    padding: 0; 
 }
 .header_wrapper {
-    height: 50px;
-    background: rgb(36,41,47);
+    height: 60px;
+    background:#24292e;
 }
 .header_wrapper .navbar {
     margin: 0 auto;
-    width: 100%;
+    width: 95%;
     display: flex;
     align-items: center;
     height: 100%;
@@ -30,23 +30,23 @@ body {
 }
 .header_wrapper .navbar .search_wrapper .icon_sec {
     background: transparent;
-    border: 1px solid grey;
-    border-radius: 5px;
-    height: 20px;
-    width: 20px;
-    margin-right: 5px;
+    border: 1px solid#808080;
+    border-radius: 3px;
+    height: 15px;
+    width: 15px;
+    margin-right: 7px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .header_wrapper .navbar .search_wrapper .icon_sec .slash{
-    color: white;
+    color:#808080;
 }
 
 .header_wrapper .navbar .search_wrapper .input_container {
     display: flex;
     align-items: center;
-    border: 1px solid grey;
+    border: 1px solid#808080;
     border-radius: 5px; 
     width: 250px;
 }
@@ -54,7 +54,7 @@ body {
     border: 0;
     outline: 0;
     background: transparent;
-    height: 30px;
+    height: 25;
     padding: 10px;
     width: 250px;
 }
@@ -63,10 +63,12 @@ body {
   font-size: 12px;
 }
 .header_wrapper .navbar .nav_menu_wrapper {
-    flex: 0 0 70%;
+    flex: 0 0 64%;
 }
 .header_wrapper .navbar .nav_menu_wrapper ul {
     list-style: none;
+    padding-inline-start: 0 !important;
+    margin-left: 15px;
 }
 .header_wrapper .navbar .nav_menu_wrapper ul li {
     display: inline-block;
@@ -75,7 +77,7 @@ body {
 .header_wrapper .navbar .nav_menu_wrapper ul li a {
     text-decoration: none;
     color: white;
-    font-size: 13px;
+    font-size: 16.5px;
 }
 .header_wrapper .navbar .nav_menu_wrapper_right {
     flex: 0 0 5%;
@@ -92,8 +94,8 @@ body {
     padding-top: 30px;
 }
 .user-resource  .profile-section .dp_wraper {
-    width: 230px;
-    height: 230px;
+    width: 250px;
+    height: 250px;
     position: relative;
 }
 .user-resource  .profile-section .dp_wraper .user-info-wrapper {
@@ -102,13 +104,15 @@ body {
 .user-resource  .profile-section .dp_wraper .floating-emoji {
     position: absolute;
     bottom: 45px;
-    right: -1px;
-    width: 30px;
-    height: 30px;
+    right: -9px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
-    box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.16);
+    border: 1px solid #d3d3d352;
+    box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.05);
     display: flex;
     align-items: center;
+    justify-content: center;
     background: white;
 }
 
@@ -120,6 +124,7 @@ body {
 }
 .user-resource  .profile-section .dp_wraper .user-info-wrapper .name {
     font-weight: 800;
+    font-size: 20px;
 }
 .user-resource  .profile-section .dp_wraper .user-info-wrapper .username {
     color: grey
@@ -130,7 +135,7 @@ body {
     border-radius: 50%;
 }
 .user-resource  .user-resources {
-    flex: 0 0 84%;
+    flex: 0 0 82%;
 }
 
 .user-resources .tabs_wrapper ul {
@@ -138,26 +143,35 @@ body {
 }
 .user-resources .tabs_wrapper ul li {
     display: inline-block;
-    margin-right: 1;
-    padding: 9px
+    padding: 13px
 }
 .user-resources .tabs_wrapper ul .active {
-    border-bottom: 1px solid red;
+    border-bottom: 2px solid rgb(249, 130, 108) !important;
+    color:black;
+    font-weight: 600;
 }
 .user-resources .tabs_wrapper ul li a {
     text-decoration: none;
-    color: black;
-    font-size: 13px;
+    color:  #24292e;
+    position: relative;
 }
-.user-resources .tabs_wrapper ul li a span {
+.user-resources .tabs_wrapper ul li:hover {
+    border-bottom: 2px solid lightgray;
+}
+.user-resources .tabs_wrapper ul li a .number_span {
     background: #d3d3d363;
-    padding: 3px 10px 3px 10px;
+    padding: 3px 7px ;
     margin-left: 5px;
     border-radius: 10px;
+    font-size: 12px;
+}
+.user-resources .tabs_wrapper ul li a .tab_name_span {
+    margin-left: 23px;
 }
 .second_row {
-    height: 50px;
-    border-bottom: 1px solid lightgray;
+    height: 61px;
+    border-bottom: 1px solid #d3d3d357;
+    margin-top: 8px;
 }
 .repo_search {
     margin-top: 15px;
@@ -166,7 +180,7 @@ body {
     width: 90%;
     border-radius: 5px;
     height: 30px;
-    border: 1px solid lightgray;
+    border: 1px solid #d3d3d357;
 }
 .repo_search .repo_search_wrapper input ::placeholder {
     color: grey;
@@ -187,19 +201,19 @@ body {
     height: 45px;
     align-items: center;
     vertical-align: center;
-    border-bottom: 1px solid lightgray;
+    border-bottom: 1px solid #d3d3d357;
     width: 95%;
 }
 .repo_search_result {
     margin-top: 15px;
     padding-bottom: 15px;
-    border-bottom: 1px solid lightgray;
+    border-bottom: 1px solid #d3d3d357;
     width: 250px;
 }
 .repo_list_wrapper {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid lightgray;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #d3d3d357;
     width: 95%;
 }
 .repo_list_wrapper .repo_list {
@@ -209,27 +223,155 @@ body {
 }
 .repo_list_wrapper .repo_list .repo_name  {
     text-decoration: none;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 800;
 }
 .repo_list_wrapper .repo_list .star_repo {
     background: rgb(250, 251, 252);
     border-radius: 5px;
     padding: 5px 20px 5px 20px;
-    border: 1px solid lightgray;
+    border: 1px solid #d3d3d357;
     font-size: 12px;
     cursor: pointer;
     outline: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .repo_info_content span {
     color: grey;
     font-size: 12px;
 }
+.repo_info_svg_parent {
+    position: relative;
+}
+.repo_info_svg {
+    margin-right: 4px;
+    position: absolute;
+    top: -1px;
+    left: -18px;
+}
 
 .repo_info_content {
-    margin-top: 15px;;
+    margin-top: 15px;
+    display: flex;
+}
+.repo_info_content .content_info {
+    margin-right: 30px;
 }
 .repo_info {
     width: 100%;
 }
+.tab_svg {
+    margin-right: 4px;
+    position: absolute;
+    top: 2px;
+    left: 0;
+}
+.nav_menu_wrapper_right {
+    display: flex;
+    justify-content: space-between;
+}
+.unread_wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.unread_count{
+    position: absolute;
+    top: -6px;
+    left: 7px;
+    width: 12px;
+    height: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(#54a3ff,#006eed);
+    border-radius: 50%;
+    font-size: 10px;
+    color: white;
+}
+.nav_dp {
+    width: 20px;
+    height: 20px;
+}
+.nav_dp img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    margin-right: 4px;
+}
+.drop_down_div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.margin-right{
+    margin-right: 15px;
+    cursor: pointer;
+}
+.dropdown-caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    vertical-align: middle;
+    content: "";
+    border-top-style: solid;
+    border-top-width: 4px;
+    border-right: 4px solid transparent;
+    border-bottom: 0 solid transparent;
+    border-left: 4px solid transparent;
+    color: white;
+}
+.dp {
+    margin-left: 7px;
+}
+.nav_svg {
+    margin-right: 4px;
+}
+.repo-language-color {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: red;
+}
+
+
+/* MOBILE RESPONSIVENESS */
+@media screen and (max-width: 575px) {
+    .tab_svg {
+        display: none !important;
+    }
+    .packages {
+        display: none !important;
+    }
+    .profile-section{
+        display: none !important;
+    }
+    .user-resource .profile-section {
+        display: none !important;
+        flex:  0 0 0% !important;
+    }
+    .nav-list {
+        padding-inline-start: 0 !important;
+    }
+    .user-resources .tabs_wrapper ul li {
+        padding: 0px !important;
+        padding-top: 13px !important;
+        padding-bottom: 13px !important;
+    }
+    .tabs_content_container {
+        margin-left: 0px !important;
+    }
+    .user-resource .user-resources{
+        flex: 0 0 101%;
+    }
+    .repo_list_wrapper {
+        width: 100%;
+    }
+}
+
