@@ -360,7 +360,18 @@ body {
 .m-bg{
     display: none;
 }
-
+.profile_row{
+    display: none;
+}
+.octicon-three-bars {
+    display: none;
+}
+.bell_count_first {
+    display: none;
+}
+.m_nav_list {
+    display: none;
+}
 /* MOBILE RESPONSIVENESS */
 @media screen and (max-width: 575px) {
     .tab_svg {
@@ -368,6 +379,15 @@ body {
     }
     .show-mobile-nav-list {
         display: none !important;
+    }
+    .bell_count_first {
+        display: inline-block !important;
+    }
+    .octicon-three-bars {
+        display: inline-block !important;
+    }
+    .m_nav_list {
+        display: inline-block !important;
     }
     .profile_row {
         margin: 0 auto;
