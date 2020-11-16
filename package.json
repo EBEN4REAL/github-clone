@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/EBEN4REAL/github-clone/issues"
   },
-  "homepage": "https://github.com/EBEN4REAL/github-clone#readme"
+  "homepage": "https://github.com/EBEN4REAL/github-clone#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  }
 }
