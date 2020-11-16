@@ -11,14 +11,14 @@ document.querySelector('.octicon-three-bars').addEventListener('click' , (e) => 
     }
 })
 const github_data = {
-    "token": "01f1bc6b09dc3410ac647d288c9d6bdc1ae1f3a3",
+    "token": "6f4083f401a13323f30a7aa02545d28f15c48aad",
     "username": 'EBEN4REAL'
 }
 const baseUrl = "https://api.github.com/graphql";
 
 const headers = {
     "Content-Type" : "application/json",
-    Authorization: "bearer " + "01f1bc6b09dc3410ac647d288c9d6bdc1ae1f3a3"
+    Authorization: "bearer " + "6f4083f401a13323f30a7aa02545d28f15c48aad"
 }
 
 
@@ -84,6 +84,7 @@ fetch(baseUrl, {
                             descriptionHTML
                             description
                         }
+                        totalCount
                     }
                 }
             } 
@@ -93,12 +94,11 @@ fetch(baseUrl, {
 })
 .then(res => res.json())
 .then(res => {
-    console.log(res.data.viewer.repositories.nodes)
     let avatarUrl = res.data.viewer.avatarUrl
     let bio =  res.data.viewer.bio
     document.querySelector('.profile_name').textContent =  res.data.viewer.name
+    document.querySelector('.totalCount').textContent =  res.data.viewer.repositories.totalCount
     Array.from(document.querySelectorAll('.name')).forEach(el => {
-        console.log(el)
         el.innerHTML = res.data.viewer.name
     })
     Array.from(document.querySelectorAll('.bio')).forEach(el => {
@@ -109,12 +109,10 @@ fetch(baseUrl, {
     })
     document.querySelector('.dp_img').src = avatarUrl
     let count = 0;
-    console.log(res.data.viewer.repositories.nodes.length)
     let publicReposCount = res.data.viewer.repositories.nodes.filter(el => !el.isPrivate).length
     document.querySelector('.publicReposCount').textContent = publicReposCount;
     res.data.viewer.repositories.nodes.forEach(el => {
         count++;
-        console.log(el);
         let child = `
         <div class="repo_list_wrapper">
             <div class="repo_list">
@@ -156,5 +154,4 @@ fetch(baseUrl, {
    
 })
 .catch(err => {
-    console.log(JSON.stringify(err.data))
 })
