@@ -134,6 +134,9 @@ body {
 .user-resource  .profile-section .dp_wraper .user-info-wrapper .user-bio {
     margin-top: 10px;
 }
+.bio {
+    font-size: 16.5px;
+}
 .user-resource  .profile-section .dp_wraper .user-info-wrapper .user-bio small {
     color: black;
 }
@@ -185,10 +188,15 @@ body {
 .user-resources .tabs_wrapper ul li a .tab_name_span {
     margin-left: 23px;
 }
+.sticky {
+    position: sticky;
+    top: 0;
+}
 .second_row {
     height: 61px;
     border-bottom: 1px solid #d3d3d357;
     margin-top: 8px;
+   
 }
 .repo_search {
     margin-top: 15px;
@@ -236,11 +244,11 @@ body {
 .repo_list_wrapper .repo_list {
     display: flex;
     justify-content: space-between;
-    width: 95%;
+    width: 100%;
 }
 .repo_list_wrapper .repo_list .repo_name  {
     text-decoration: none;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 600;
     color: var(--color-text-link);
 }
@@ -372,10 +380,93 @@ body {
 .m_nav_list {
     display: none;
 }
+.private_label {
+    padding: 0 7px;
+    border-radius: 2em;
+    border: 1px solid #d3d3d357;
+    font-size: 12px;
+    font-weight: 600;
+    font-weight: 500;
+    line-height: 18px;
+}
+.status_div {
+    display: none;
+}
+.status_active_text{
+    display: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  .drop_down_dp_text{
+      padding: 5px;
+      padding-left: 8px;
+      border-bottom: 1px solid var(--lightgrey);
+  }
+  .mid_links {
+    border-bottom: 1px solid var(--lightgrey);
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 18px;
+    background-color:var(--color-white);
+    min-width: 170px;
+    border-radius: 5px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  .dropdown-content a {
+    color: black;
+    padding: 5px 8px;
+    text-decoration: none;
+    display: block;
+    font-size: 13px;
+    color: black
+    
+  }
+  .dropdown-content a:first-child {
+    margin-top: 15px;
+  }
+  .dropdown-content a:last-child{
+    margin-bottom: 15px;
+  }
+  .dropdown-content a:hover {background-color: var(--color-text-link);color: var(--color-white)}
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown:hover .dropbtn {
+    /* background-color: #3e8e41; */
+  }
 /* MOBILE RESPONSIVENESS */
 @media screen and (max-width: 575px) {
+    .status_div {
+        display: block !important;
+        border: 1px solid var(--lightgrey);
+        padding: 5px;
+        width: 100%;
+        border-radius: 5px;
+        padding-left: 12px;
+    }
+    .status_text {
+        font-size: 14px;
+        margin-left: 15px;
+    }
+    .status_parent_svg{
+        position: absolute;
+        left: 5px;
+        top: 7px;
+    }
     .tab_svg {
         display: none !important;
+    }
+    .repo_list_wrapper .repo_list{
+        width: 100% !important;
     }
     .show-mobile-nav-list {
         display: none !important;
@@ -394,6 +485,7 @@ body {
         width: 95%;
         margin-top: 20px;
         display: flex;
+        position: relative;
     }
     .profile_name {
         font-weight: 600;

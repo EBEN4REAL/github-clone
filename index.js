@@ -10,7 +10,13 @@ document.querySelector('.octicon-three-bars').addEventListener('click' , (e) => 
         document.querySelector('.nav_menu_wrapper').classList.add('show-mobile-nav-list')
     }
 })
-
+document.querySelector('.floating-emoji').addEventListener('mouseover', () => {
+    document.querySelector('.status_active_text').style.display = 'inline-block'
+})
+document.querySelector('.floating-emoji').addEventListener('mouseout', (e) => {
+    e.target.width = '100%'
+    document.querySelector('.status_active_text').style.display = 'none'
+})
 const baseUrl = "https://api.github.com/graphql";
 
 const headers = {
@@ -94,7 +100,7 @@ fetch(baseUrl, {
     let avatarUrl = res.data.viewer.avatarUrl
     let bio =  res.data.viewer.bio
     document.querySelector('.profile_name').textContent =  res.data.viewer.name
-    document.querySelector('.totalCount').textContent =  res.data.viewer.repositories.totalCount
+    document.querySelector('.totalCount').textContent =  res.data.viewer.repositories.nodes.length
     Array.from(document.querySelectorAll('.name')).forEach(el => {
         el.innerHTML = res.data.viewer.name
     })
@@ -117,6 +123,8 @@ fetch(baseUrl, {
                     <a class="repo_name" href="${el.url}">
                         ${el.name}
                     </a>
+                    ${el.isPrivate ? '<span class="private_label">Private</span>' : ''}
+                    
                     <div class="repo_info_content">
                         <div class="content_info">
                             <span class="repo-language-color" style="background: ${el.primaryLanguage.color}"></span><span> ${el.primaryLanguage.name}</span>
