@@ -10,15 +10,12 @@ document.querySelector('.octicon-three-bars').addEventListener('click' , (e) => 
         document.querySelector('.nav_menu_wrapper').classList.add('show-mobile-nav-list')
     }
 })
-const github_data = {
-    "token": "6f4083f401a13323f30a7aa02545d28f15c48aad",
-    "username": 'EBEN4REAL'
-}
+
 const baseUrl = "https://api.github.com/graphql";
 
 const headers = {
     "Content-Type" : "application/json",
-    Authorization: "bearer " + "4a38338ca35453f47f75d99fb41b6d662120a8e0"
+    Authorization: "bearer " + process.env.TOKEN
 }
 
 
