@@ -1,9 +1,15 @@
-document.querySelector('.octicon-three-bars').addEventListener('click' , (e) => {
-    if(document.querySelector('.search_wrapper').classList.contains('show-mobile-nav-list')) {
-        document.querySelector('.search_wrapper').classList.remove('show-mobile-nav-list')
-    }else {
-        document.querySelector('.search_wrapper').classList.add('show-mobile-nav-list')
-    }
+document.getElementById('search_field').addEventListener('focus' , e => {
+    e.target.style.color = 'black'
+    document.querySelector('.input_container').style.width = '500px';
+    document.querySelector('.input_container').style.background = 'white';
+    document.querySelector('.icon_sec').style.display = 'none'
+})
+document.getElementById('search_field').addEventListener('blur' , (e) => {
+    document.querySelector('.input_container').style.width = '250px';
+    document.querySelector('.input_container').style.background = 'transparent';
+    document.querySelector('.icon_sec').style.display = 'flex'
+})
+document.querySelector('.octicon-three-bars').addEventListener('click' , e => {
     if(document.querySelector('.nav_menu_wrapper').classList.contains('show-mobile-nav-list')) {
         document.querySelector('.nav_menu_wrapper').classList.remove('show-mobile-nav-list')
     }else {
@@ -21,7 +27,7 @@ const baseUrl = "https://api.github.com/graphql";
 
 const headers = {
     "Content-Type" : "application/json",
-    Authorization: "bearer " + process.env.TOKEN
+    Authorization: "bearer " + "c24d98b7683ef3ba041b984b7a8517108c26b22c"
 }
 
 
