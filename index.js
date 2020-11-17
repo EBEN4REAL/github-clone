@@ -1,3 +1,4 @@
+
 document.getElementById('search_field').addEventListener('focus' , e => {
     e.target.style.color = 'black'
     document.querySelector('.input_container').style.width = '500px';
@@ -27,7 +28,7 @@ const baseUrl = "https://api.github.com/graphql";
 
 const headers = {
     "Content-Type" : "application/json",
-    Authorization: "bearer " + "c24d98b7683ef3ba041b984b7a8517108c26b22c"
+    Authorization: `token ${process.env.TOKEN} `
 }
 
 
@@ -166,3 +167,4 @@ fetch(baseUrl, {
 })
 .catch(err => {
 })
+

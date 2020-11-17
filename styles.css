@@ -191,15 +191,14 @@ body {
 .user-resources .tabs_wrapper ul li a .tab_name_span {
     margin-left: 23px;
 }
-.sticky {
-    position: sticky;
-    top: 0;
-}
 .second_row {
     height: 61px;
     border-bottom: 1px solid #d3d3d357;
     margin-top: 8px;
-   
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 .repo_search {
     margin-top: 15px;
