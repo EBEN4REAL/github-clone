@@ -28,7 +28,7 @@ const baseUrl = "https://api.github.com/graphql";
 
 const headers = {
     "Content-Type" : "application/json",
-    Authorization: `token ${process.env.TOKEN} `
+    Authorization: `token ${token} `
 }
 
 
@@ -104,6 +104,7 @@ fetch(baseUrl, {
 })
 .then(res => res.json())
 .then(res => {
+    document.getElementsByTagName('body').style.display = 'block'
     let avatarUrl = res.data.viewer.avatarUrl
     let bio =  res.data.viewer.bio
     document.querySelector('.profile_name').textContent =  res.data.viewer.name
