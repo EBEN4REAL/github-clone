@@ -104,7 +104,7 @@ fetch(baseUrl, {
 })
 .then(res => res.json())
 .then(res => {
-    document.getElementsByTagName('body').style.display = 'block'
+    document.querySelector('.second_row').style.display = 'block'
     let avatarUrl = res.data.viewer.avatarUrl
     let bio =  res.data.viewer.bio
     document.querySelector('.profile_name').textContent =  res.data.viewer.name
@@ -122,7 +122,7 @@ fetch(baseUrl, {
     let count = 0;
     let publicReposCount = res.data.viewer.repositories.nodes.filter(el => !el.isPrivate).length
     document.querySelector('.publicReposCount').textContent = publicReposCount;
-    res.data.viewer.repositories.nodes.forEach(el => {
+    res.data.viewer.repositories.nodes.reverse().forEach(el => {
         count++;
         let child = `
         <div class="repo_list_wrapper">
@@ -169,3 +169,29 @@ fetch(baseUrl, {
 .catch(err => {
 })
 
+
+
+Array.from(document.querySelectorAll('.dropbtn')).forEach(el => {
+    el.addEventListener('click', (e) => {
+        el.parentNode.children[1].classList.toggle('show')
+    })
+})
+//   window.onclick = function(event) {
+//     if (!event.target.matches('.dropbtn')) {
+//       var dropdowns = Array.from(document.querySelectorAll(".dropdown-content"));
+//       var i;
+//       for (i = 0; i < dropdowns.length; i++) {
+//         var openDropdown = dropdowns[i];
+//         if (openDropdown.classList.contains('show')) {
+//           openDropdown.classList.remove('show');
+//         }
+//       }
+//     }
+//   }
+document.addEventListener("click", (e) => {
+    if(document.querySelector('.dropdown-content').contains(e.target)) {
+        return;
+    }
+    
+    console.log(e.target)
+})

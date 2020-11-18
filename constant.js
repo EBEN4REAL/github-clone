@@ -1,3 +1,3 @@
-const token = atob("70d3c94573c63c31a1cd44db8ba6287c1943eb65");
+// const token = atob("86d86d89d20f2638cab76b5c6b4d9f7d000258c3");
 
-// const token = "70d3c94573c63c31a1cd44db8ba6287c1943eb65"
+const token = ""
