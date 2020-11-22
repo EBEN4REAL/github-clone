@@ -6,7 +6,7 @@
     font-family: 'Open Sans', sans-serif !important;
 }
 :root {
-    --lightgrey:#80808042;
+    --lightgrey:#d0caca9c;
     --color-text-link: #0366d6;
     --color-white: white;
 }
@@ -148,6 +148,12 @@ body {
     color: black !important;
     font-weight: 600 !important;
 }
+.uname  {
+    color: black !important;
+    font-weight: 600 !important;
+    margin-left: 0px !important;
+}
+
 .bio {
     font-size: 16.5px;
 }
@@ -170,7 +176,7 @@ body {
     
 }
 .user-resource  .user-resources {
-    flex: 0 0 82%;
+    flex: 0 0 81%;
 }
 
 .tabs_wrapper ul {
@@ -621,6 +627,9 @@ body {
     .header_wrapper .navbar .nav_menu_wrapper {
         flex: 0 0 0% !important;
         height: auto !important;
+    }
+    .repo_nav_menu  {
+        flex: 0 0 100% !important;
     }
     .tabs_wrapper ul li {
         padding: 0px !important;
