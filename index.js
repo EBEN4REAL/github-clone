@@ -69,22 +69,13 @@ fetch(baseUrl, {
                     avatarUrl
                     bio
                     name
+                    login
                     repositories(first: 20, orderBy: {field: CREATED_AT, direction: DESC}) {
-                            pageInfo {
-                                hasNextPage
-                                endCursor
-                            }
                             nodes {
                             name
                             url
                             updatedAt
                             isPrivate
-                            owner {
-                                login
-                            }
-                            defaultBranchRef {
-                                name
-                            }
                             primaryLanguage {
                                 name
                                 color
@@ -122,6 +113,12 @@ fetch(baseUrl, {
     let count = 0;
     let publicReposCount = res.data.viewer.repositories.nodes.filter(el => !el.isPrivate).length
     document.querySelector('.publicReposCount').textContent = publicReposCount;
+    document.querySelector('.username').textContent = res.data.viewer.login;
+    Array.from(document.querySelectorAll('.username')).forEach(el => {
+        el.textContent = res.data.viewer.login;
+    })
+    document.querySelector('.profile_uname').textContent = res.data.viewer.login;
+    
     res.data.viewer.repositories.nodes.reverse().forEach(el => {
         count++;
         let child = `
@@ -176,22 +173,17 @@ Array.from(document.querySelectorAll('.dropbtn')).forEach(el => {
         el.parentNode.children[1].classList.toggle('show')
     })
 })
-//   window.onclick = function(event) {
-//     if (!event.target.matches('.dropbtn')) {
-//       var dropdowns = Array.from(document.querySelectorAll(".dropdown-content"));
-//       var i;
-//       for (i = 0; i < dropdowns.length; i++) {
-//         var openDropdown = dropdowns[i];
-//         if (openDropdown.classList.contains('show')) {
-//           openDropdown.classList.remove('show');
-//         }
-//       }
-//     }
-//   }
 document.addEventListener("click", (e) => {
     if(document.querySelector('.dropdown-content').contains(e.target)) {
         return;
     }
-    
-    console.log(e.target)
 })
+
+window.addEventListener("scroll", (e) => {
+    if (window.scrollY >= 370) {
+        document.querySelector('.repo_logo').style.visibility = 'visible';
+    } else {
+        document.querySelector('.repo_logo').style.visibility = 'hidden';
+    }
+  });
+  

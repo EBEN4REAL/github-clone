@@ -15,6 +15,7 @@ body {
    margin: 0;
    padding: 0; 
 }
+
 .header_wrapper {
     height: 60px;
     background:#24292e;
@@ -112,16 +113,16 @@ body {
     padding-top: 30px;
 }
 .user-resource  .profile-section .dp_wraper {
-    width: 250px;
-    height: 250px;
+    width: 270px;
+    height: 270px;
     position: relative;
     box-shadow: 0px 1px 4px #0000001f;
     border-radius: 50%;
 }
-.user-resource  .profile-section .dp_wraper .user-info-wrapper {
+.user-info-wrapper {
     margin-top: 15px;
 }
-.user-resource  .profile-section .dp_wraper .floating-emoji {
+.floating-emoji {
     position: absolute;
     bottom: 45px;
     right: -9px;
@@ -136,20 +137,29 @@ body {
     background: white;
 }
 
-.user-resource  .profile-section .dp_wraper .user-info-wrapper .user-bio {
+.user-info-wrapper .user-bio {
     margin-top: 10px;
+}
+.dp_wraper:first-child {
+    z-index: 10;
+    margin-top: -55px;
+}
+.repo_uname {
+    color: black !important;
+    font-weight: 600 !important;
 }
 .bio {
     font-size: 16.5px;
 }
-.user-resource  .profile-section .dp_wraper .user-info-wrapper .user-bio small {
+.user-bio small {
     color: black;
 }
-.user-resource  .profile-section .dp_wraper .user-info-wrapper .name {
+ .name {
     font-weight: 600;
-    font-size: 20px;
+    font-size: 26px;
+    color: #24292e;
 }
-.user-resource  .profile-section .dp_wraper .user-info-wrapper .username {
+.username {
     color: grey;
     font-weight: 300;
 }
@@ -157,50 +167,44 @@ body {
     width: 100%;
     height: 100%;
     border-radius: 50%;
+    
 }
 .user-resource  .user-resources {
     flex: 0 0 82%;
 }
 
-.user-resources .tabs_wrapper ul {
+.tabs_wrapper ul {
     list-style: none;
 }
-.user-resources .tabs_wrapper ul li {
+.tabs_wrapper ul li {
     display: inline-block;
     padding: 11px;
     font-weight: 500;
 }
-.user-resources .tabs_wrapper ul .active {
+.tabs_wrapper ul .active {
     border-bottom: 2px solid rgb(249, 130, 108) !important;
     color:black;
     font-weight: 600 !important;
 }
-.user-resources .tabs_wrapper ul li a {
+ .tabs_wrapper ul li a {
     text-decoration: none;
     color:  #24292e;
     position: relative;
 }
-.user-resources .tabs_wrapper ul li:hover {
+.tabs_wrapper ul li:hover {
     border-bottom: 2px solid lightgray;
 }
-.user-resources .tabs_wrapper ul li a .number_span {
+.tabs_wrapper ul li a .number_span {
     background: #d3d3d363;
     padding: 3px 7px ;
     margin-left: 5px;
     border-radius: 10px;
     font-size: 12px;
 }
-.user-resources .tabs_wrapper ul li a .tab_name_span {
+.tabs_wrapper ul li a .tab_name_span {
     margin-left: 23px;
 }
 .second_row {
-    height: 61px;
-    border-bottom: 1px solid #d3d3d357;
-    margin-top: 8px;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    z-index: 1;
     display: none;
 }
 .repo_search {
@@ -324,8 +328,8 @@ body {
     color: white;
 }
 .nav_dp {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
 }
 .nav_dp img {
     width: 100%;
@@ -343,7 +347,7 @@ body {
     cursor: pointer;
 }
 .dropdown-caret {
-    display: inline-block;
+    display: flex;
     width: 0;
     height: 0;
     vertical-align: middle;
@@ -402,7 +406,7 @@ body {
 }
   .dropdown {
     position: relative;
-    display: inline-block;
+    display: flex;
   }
   
   .dropdown-content {
@@ -440,7 +444,40 @@ body {
     padding-left: 8px;
     border-bottom: 1px solid var(--lightgrey);
 }
-  .show {display: block;}
+.show {display: block;}
+
+  /* REPO NAV */
+.repo_nav_wrapper {
+    height: 43px;
+    border-bottom: 1px solid #d3d3d357;
+    margin-top: 26px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: var(--color-white);
+}
+.repo_nav {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    width: 93%;
+    height: 100%;
+}
+.repo_nav_menu {
+    flex: 0 0 75%
+}
+.repo_logo {
+    flex: 0 0 22%;
+    display: flex;
+    visibility: hidden;
+    transition: 0.5s all;
+}
+.hide {
+    display: none !important;
+}
+.repo_uname{
+    margin-left: 10px;
+}
 /* MOBILE RESPONSIVENESS */
 @media screen and (max-width: 575px) {
     .status_div {
@@ -450,6 +487,9 @@ body {
         width: 100%;
         border-radius: 5px;
         padding-left: 12px;
+    }
+    .repo_logo {
+        display: none !important;
     }
     .header_wrapper .navbar .nav_menu_wrapper{
         align-items: inherit;
@@ -582,7 +622,7 @@ body {
         flex: 0 0 0% !important;
         height: auto !important;
     }
-    .user-resources .tabs_wrapper ul li {
+    .tabs_wrapper ul li {
         padding: 0px !important;
         padding-top: 11px !important;
         padding-bottom: 11px !important;
@@ -599,7 +639,7 @@ body {
     .null{
         display: none !important;
     }
-    .user-resources .tabs_wrapper ul li a .tab_name_span {
+   .tabs_wrapper ul li a .tab_name_span {
         margin-left: 13px !important;
     }
     .repo_search .repo_search_wrapper {
