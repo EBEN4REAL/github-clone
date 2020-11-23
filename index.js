@@ -1,14 +1,37 @@
 
 document.getElementById('search_field').addEventListener('focus' , e => {
     e.target.style.color = 'black'
+    document.querySelector('.search_drop_down').style.display = 'block';
     document.querySelector('.input_container').style.width = '500px';
-    document.querySelector('.input_container').style.background = 'white';
+    document.querySelector('#search_field').style.width = '500px';
+    document.querySelector('.input_container').style.background = '#f9f9f9';
+    document.querySelector('.input_container').style.borderRadius = '0px';
+    document.querySelector('.input_container').style.borderTopLeftRadius = '5px';
+    document.querySelector('.input_container').style.borderTopRightRadius = '5px';
+    document.querySelector('.input_container').style.borderBottomRightRadius = 'none';
+    document.querySelector('.input_container').style.borderBottomLeftRadius = 'none';
     document.querySelector('.icon_sec').style.display = 'none'
 })
-document.getElementById('search_field').addEventListener('blur' , (e) => {
+document.getElementById('search_field').addEventListener('blur' , () => {
+    document.querySelector('.search_drop_down').style.display = 'none';
     document.querySelector('.input_container').style.width = '250px';
+    document.querySelector('#search_field').style.width = '250px';
     document.querySelector('.input_container').style.background = 'transparent';
+    document.querySelector('.input_container').style.borderRadius = '5px';
+    document.querySelector('.input_container').style.borderTopLeftRadius = '5px';
+    document.querySelector('.input_container').style.borderTopRightRadius = '5px';
+    document.querySelector('.input_container').style.borderBottomRightRadius = '5px';
+    document.querySelector('.input_container').style.borderBottomLeftRadius = '5px';
+    document.querySelector('.icon_sec').style.display = 'none'
     document.querySelector('.icon_sec').style.display = 'flex'
+})
+document.querySelector('.search_list').addEventListener('mouseover', () => {
+    document.querySelector('.jump_to_label').style.display = 'block'
+    document.querySelector('.drop_down_repo_link').style.color = 'white'
+})
+document.querySelector('.search_list').addEventListener('mouseout', () => {
+    document.querySelector('.jump_to_label').style.display = 'none'
+    document.querySelector('.drop_down_repo_link').style.color = 'black'
 })
 document.querySelector('.octicon-three-bars').addEventListener('click' , e => {
     if(document.querySelector('.nav_menu_wrapper').classList.contains('show-mobile-nav-list')) {
@@ -18,17 +41,15 @@ document.querySelector('.octicon-three-bars').addEventListener('click' , e => {
     }
 })
 document.querySelector('.floating-emoji').addEventListener('mouseover', () => {
-    document.querySelector('.status_active_text').style.display = 'inline-block'
 })
 document.querySelector('.floating-emoji').addEventListener('mouseout', (e) => {
     e.target.width = '100%'
-    document.querySelector('.status_active_text').style.display = 'none'
 })
 const baseUrl = "https://api.github.com/graphql";
 
 const headers = {
-    "Content-Type" : "application/json",
-    Authorization: `token ${token} `
+    "Content-Type": "application/json",
+    authorization: `token {GITHUB_TOKEN}`,
 }
 
 
@@ -62,6 +83,9 @@ const timeSince = (date) => {
 fetch(baseUrl, {
     method: "POST",
     headers: headers,
+    mode: "cors",
+    cache: "no-cache",
+    referrerPolicy: "no-referrer",
     body: JSON.stringify({
         query: `
             query {
@@ -70,7 +94,7 @@ fetch(baseUrl, {
                     bio
                     name
                     login
-                    repositories(first: 20, orderBy: {field: CREATED_AT, direction: DESC}) {
+                    repositories(first: 20, orderBy: {field: UPDATED_AT, direction: DESC}) {
                             nodes {
                             name
                             url
@@ -95,6 +119,7 @@ fetch(baseUrl, {
 })
 .then(res => res.json())
 .then(res => {
+    console.log(res.data)
     document.querySelector('.second_row').style.display = 'block'
     let avatarUrl = res.data.viewer.avatarUrl
     let bio =  res.data.viewer.bio
@@ -129,6 +154,7 @@ fetch(baseUrl, {
                         ${el.name}
                     </a>
                     ${el.isPrivate ? '<span class="private_label">Private</span>' : ''}
+                    <div class="repo_desc">${el.description ? el.description : ''}</div>
                     
                     <div class="repo_info_content">
                         <div class="content_info">
