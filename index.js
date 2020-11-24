@@ -10,7 +10,7 @@ document.getElementById('search_field').addEventListener('focus' , e => {
     document.querySelector('.input_container').style.borderTopRightRadius = '5px';
     document.querySelector('.input_container').style.borderBottomRightRadius = 'none';
     document.querySelector('.input_container').style.borderBottomLeftRadius = 'none';
-    document.querySelector('.icon_sec').style.display = 'none'
+    document.querySelector('.slash_icon').style.display = 'none'
 })
 document.getElementById('search_field').addEventListener('blur' , () => {
     document.querySelector('.search_drop_down').style.display = 'none';
@@ -22,8 +22,7 @@ document.getElementById('search_field').addEventListener('blur' , () => {
     document.querySelector('.input_container').style.borderTopRightRadius = '5px';
     document.querySelector('.input_container').style.borderBottomRightRadius = '5px';
     document.querySelector('.input_container').style.borderBottomLeftRadius = '5px';
-    document.querySelector('.icon_sec').style.display = 'none'
-    document.querySelector('.icon_sec').style.display = 'flex'
+    document.querySelector('.slash_icon').style.display = 'inline-block'
 })
 document.querySelector('.search_list').addEventListener('mouseover', () => {
     document.querySelector('.jump_to_label').style.display = 'block'
@@ -49,7 +48,7 @@ const baseUrl = "https://api.github.com/graphql";
 
 const headers = {
     "Content-Type": "application/json",
-    authorization: `token {GITHUB_TOKEN}`,
+    authorization: `token ${token} `,
 }
 
 
