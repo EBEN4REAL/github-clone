@@ -309,6 +309,9 @@ body {
 }
 .repo_desc {
     color: grey;
+    font-size: 12px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 .repo_list_wrapper {
     padding-top: 30px;

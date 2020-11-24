@@ -93,7 +93,7 @@ fetch(baseUrl, {
                     bio
                     name
                     login
-                    repositories(first: 20, orderBy: {field: UPDATED_AT, direction: DESC}) {
+                    repositories(first: 20,orderBy: {field: UPDATED_AT, direction: DESC}) {
                             nodes {
                             name
                             url
@@ -134,7 +134,6 @@ fetch(baseUrl, {
         el.src = avatarUrl
     })
     document.querySelector('.dp_img').src = avatarUrl
-    let count = 0;
     let publicReposCount = res.data.viewer.repositories.nodes.filter(el => !el.isPrivate).length
     document.querySelector('.publicReposCount').textContent = publicReposCount;
     document.querySelector('.username').textContent = res.data.viewer.login;
@@ -143,8 +142,11 @@ fetch(baseUrl, {
     })
     document.querySelector('.profile_uname').textContent = res.data.viewer.login;
     
-    res.data.viewer.repositories.nodes.reverse().forEach(el => {
-        count++;
+    let count = 0
+    res.data.viewer.repositories.nodes.forEach(el => {
+        ++count
+        console.log(count)
+        console.log(el)
         let child = `
         <div class="repo_list_wrapper">
             <div class="repo_list">
@@ -157,7 +159,7 @@ fetch(baseUrl, {
                     
                     <div class="repo_info_content">
                         <div class="content_info">
-                            <span class="repo-language-color" style="background: ${el.primaryLanguage.color}"></span><span> ${el.primaryLanguage.name}</span>
+                            <span class="repo-language-color" style="background: ${el.primaryLanguage ? el.primaryLanguage.color : ''}"></span><span> ${el.primaryLanguage ? el.primaryLanguage.name : ''}</span>
                         </div>
                     <div class="content_info null">
                             <span class="repo_info_svg_parent">
@@ -184,7 +186,8 @@ fetch(baseUrl, {
             </div>
         </div>
         `;
-        document.querySelector('.repo_list_container').insertAdjacentHTML('afterend' , child)
+        document.querySelector('.repo_list_container').insertAdjacentHTML('beforeend' , child)
+        // document.querySelector('.repo_list_container').appendChild(child)
     });
    
 })
