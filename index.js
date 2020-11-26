@@ -144,9 +144,6 @@ fetch(baseUrl, {
     
     let count = 0
     res.data.viewer.repositories.nodes.forEach(el => {
-        ++count
-        console.log(count)
-        console.log(el)
         let child = `
         <div class="repo_list_wrapper">
             <div class="repo_list">
