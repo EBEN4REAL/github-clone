@@ -548,7 +548,7 @@ body {
     margin-left: 10px;
 }
 /* MOBILE RESPONSIVENESS */
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 1024px) {
     .status_div {
         display: block !important;
         border: 1px solid var(--lightgrey);
