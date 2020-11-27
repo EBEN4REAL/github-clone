@@ -548,6 +548,17 @@ body {
     margin-left: 10px;
 }
 /* MOBILE RESPONSIVENESS */
+@media screen and (max-width: 360px) {
+    .profile_name {
+        font-size: 17px !important;
+    }
+    .tabs_wrapper ul li a .tab_name_span {
+        font-size:9px !important;
+    }
+    .repo_info_content span {
+        font-size: 9px !important;
+    }
+}
 @media screen and (max-width: 1024px) {
     .status_div {
         display: block !important;
@@ -560,6 +571,12 @@ body {
     .repo_logo {
         display: none !important;
     }
+    /* .profile_name {
+        font-size: 23px !important;
+    }
+    .tabs_wrapper ul li a .tab_name_span {
+        font-size: 12px !important;
+    } */
     .header_wrapper .navbar .nav_menu_wrapper{
         align-items: inherit;
     }
