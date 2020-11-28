@@ -39,9 +39,9 @@ document.querySelector('.octicon-three-bars').addEventListener('click' , e => {
         document.querySelector('.nav_menu_wrapper').classList.add('show-mobile-nav-list')
     }
 })
-document.querySelector('.floating-emoji').addEventListener('mouseover', () => {
+document.querySelector('.float_emoji_html').addEventListener('mouseover', () => {
 })
-document.querySelector('.floating-emoji').addEventListener('mouseout', (e) => {
+document.querySelector('.float_emoji_html').addEventListener('mouseout', (e) => {
     e.target.width = '100%'
 })
 const baseUrl = "https://api.github.com/graphql";
@@ -93,6 +93,10 @@ fetch(baseUrl, {
                     bio
                     name
                     login
+                    status {
+                        emojiHTML
+                        message
+                    }
                     repositories(first: 20,orderBy: {field: UPDATED_AT, direction: DESC}) {
                             nodes {
                             name
@@ -119,6 +123,9 @@ fetch(baseUrl, {
 .then(res => res.json())
 .then(res => {
     console.log(res.data)
+    document.querySelector('.emoji_html').innerHTML = res.data.viewer.status.emojiHTML
+    // document.querySelector('.status__text').innerHTML = res.data.viewer.status.message
+    document.querySelector('.app_page_loader').style.display = 'none'
     document.querySelector('.second_row').style.display = 'block'
     let avatarUrl = res.data.viewer.avatarUrl
     let bio =  res.data.viewer.bio
@@ -184,7 +191,6 @@ fetch(baseUrl, {
         </div>
         `;
         document.querySelector('.repo_list_container').insertAdjacentHTML('beforeend' , child)
-        // document.querySelector('.repo_list_container').appendChild(child)
     });
    
 })
@@ -203,12 +209,10 @@ document.addEventListener("click", (e) => {
         return;
     }
 })
-
 window.addEventListener("scroll", (e) => {
     if (window.scrollY >= 370) {
         document.querySelector('.repo_logo').style.visibility = 'visible';
     } else {
         document.querySelector('.repo_logo').style.visibility = 'hidden';
     }
-  });
-  
+});

@@ -2,18 +2,15 @@
 
 
 
-* {
-    font-family: 'Open Sans', sans-serif !important;
-}
 :root {
     --lightgrey:#d0caca9c;
     --color-text-link: #0366d6;
     --color-white: white;
 }
-
 body {
    margin: 0;
    padding: 0; 
+   font-family: 'Open Sans', sans-serif !important;
 }
 /* Search Dropdown */
 .search_drop_down {
@@ -179,19 +176,39 @@ body {
 .user-info-wrapper {
     margin-top: 15px;
 }
-.floating-emoji {
+.status__text {
+    margin-left: 8px;
+}
+.emoji_html {
+    margin-left: 5px;
+}
+.float_emoji_html {
     position: absolute;
-    bottom: 45px;
-    right: -9px;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
+    bottom: 16%;
     border: 1px solid #d3d3d352;
     box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.05);
     display: flex;
     align-items: center;
     justify-content: center;
     background: white;
+    padding: 3px;
+    border-radius: 50%;
+    right: 4;
+    width: 35px;
+    height: 35px;
+}
+.floating-emoji {
+    position: absolute;
+    bottom: 16%;
+    border: 1px solid #d3d3d352;
+    box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    padding: 3px;
+    border-radius: 17px;
+    right: -57%;
 }
 
 .user-info-wrapper .user-bio {
@@ -552,9 +569,6 @@ body {
     .profile_name {
         font-size: 17px !important;
     }
-    .tabs_wrapper ul li a .tab_name_span {
-        font-size:9px !important;
-    }
     .repo_info_content span {
         font-size: 9px !important;
     }
@@ -568,15 +582,10 @@ body {
         border-radius: 5px;
         padding-left: 12px;
     }
+  
     .repo_logo {
         display: none !important;
     }
-    /* .profile_name {
-        font-size: 23px !important;
-    }
-    .tabs_wrapper ul li a .tab_name_span {
-        font-size: 12px !important;
-    } */
     .header_wrapper .navbar .nav_menu_wrapper{
         align-items: inherit;
     }
@@ -639,7 +648,7 @@ body {
        
     }
     .packages {
-        display: none !important;
+        /* display: none !important; */
     }
     .profile-section{
         display: none !important;
@@ -704,6 +713,12 @@ body {
     .nav-list {
         padding-inline-start: 0 !important;
     }
+    .repo_nav_menu {
+        overflow: auto;
+    }
+    .tabs_wrapper {
+        width: 600px;
+    }
     .header_wrapper .navbar .nav_menu_wrapper {
         flex: 0 0 0% !important;
         height: auto !important;
@@ -728,9 +743,6 @@ body {
     .null{
         display: none !important;
     }
-   .tabs_wrapper ul li a .tab_name_span {
-        margin-left: 13px !important;
-    }
     .repo_search .repo_search_wrapper {
         width: 100%;
     }
@@ -742,3 +754,72 @@ body {
     }
 }
 
+
+
+
+.app_page_loader {
+    min-height: calc(100vh - 90px);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  
+  .app_page_loader.hide {
+    display: none;
+  }
+  
+  .app_page_loader svg {
+    height: 100px;
+    height: 100px;
+    -webkit-animation-name: shrink;
+            animation-name: shrink;
+    -webkit-animation-duration: 1.5s;
+            animation-duration: 1.5s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+  }
+  
+  .app_page_loader svg path {
+    fill: #24292e;
+  }
+  @-webkit-keyframes shrink {
+    0% {
+      -webkit-transform: scale(0.7);
+              transform: scale(0.7);
+      opacity: 0.7;
+    }
+    50% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(0.7);
+              transform: scale(0.7);
+      opacity: 0.7;
+    }
+  }
+  
+  @keyframes shrink {
+    0% {
+      -webkit-transform: scale(0.7);
+              transform: scale(0.7);
+      opacity: 0.7;
+    }
+    50% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(0.7);
+              transform: scale(0.7);
+      opacity: 0.7;
+    }
+  }
