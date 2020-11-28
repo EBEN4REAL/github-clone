@@ -1,4 +1,4 @@
 # github-clone  Buy Coins Frontend Challenge
 
-URL:  https://github-ebzzy.netlify.app/
+URL:  https://github-ebzzzy.netlify.app/
 
