@@ -202,11 +202,6 @@ Array.from(document.querySelectorAll('.dropbtn')).forEach(el => {
         el.parentNode.children[1].classList.toggle('show')
     })
 })
-document.addEventListener("click", (e) => {
-    if(document.querySelector('.dropdown-content').contains(e.target)) {
-        return;
-    }
-})
 window.onclick = (event) => {
     if (!event.target.matches('.dropbtn')) {
           var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -214,7 +209,7 @@ window.onclick = (event) => {
           for (i = 0; i < dropdowns.length; i++) {
                 var openDropdown = dropdowns[i];
                 if (openDropdown.classList.contains('show')) {
-                openDropdown.classList.remove('show');
+                    openDropdown.classList.remove('show');
                 }
           }
     }
