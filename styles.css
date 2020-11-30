@@ -401,7 +401,7 @@ body {
 }
 .unread_count{
     position: absolute;
-    top: -6px;
+    top: -2px;
     left: 7px;
     width: 12px;
     height: 12px;

@@ -122,9 +122,7 @@ fetch(baseUrl, {
 })
 .then(res => res.json())
 .then(res => {
-    console.log(res.data)
     document.querySelector('.emoji_html').innerHTML = res.data.viewer.status.emojiHTML
-    // document.querySelector('.status__text').innerHTML = res.data.viewer.status.message
     document.querySelector('.app_page_loader').style.display = 'none'
     document.querySelector('.second_row').style.display = 'block'
     let avatarUrl = res.data.viewer.avatarUrl
@@ -209,6 +207,18 @@ document.addEventListener("click", (e) => {
         return;
     }
 })
+window.onclick = (event) => {
+    if (!event.target.matches('.dropbtn')) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+                }
+          }
+    }
+}
 window.addEventListener("scroll", (e) => {
     if (window.scrollY >= 370) {
         document.querySelector('.repo_logo').style.visibility = 'visible';
