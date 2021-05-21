@@ -637,7 +637,7 @@ ul>li {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background-color: #fafbfc;
+    background-color: var(--btn-bg);
     border: 1px solid;
     outline: none;
     border-color: #1b1f2326;
