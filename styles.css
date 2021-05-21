@@ -6,7 +6,7 @@
     --green-bg: #2ea44f;
     --btn-text: #24292e;
     --btn-bg: #fafbfc;
-    --btn-border: #E6E6E7;
+    --btn-border: #d3d3d357;
     --btn-shadow: #24292e;
     --body-text: #586069;
     --repo-border: #eaecef;
@@ -406,7 +406,7 @@ ul>li {
     background: rgb(250, 251, 252);
     border-radius: 5px;
     padding: 5px 20px 5px 20px;
-    border: 1px solid #d3d3d357;
+    border: 1px solid var(--btn-border);
     font-size: 12px;
     cursor: pointer;
     outline: 0;
