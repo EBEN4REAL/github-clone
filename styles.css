@@ -1,8 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
 
 
-
 :root {
+    --primary-color: #0366d6;
+    --green-bg: #2ea44f;
+    --btn-text: #24292e;
+    --btn-bg: #fafbfc;
+    --btn-border: #E6E6E7;
+    --btn-shadow: #24292e;
+    --body-text: #586069;
+    --repo-border: #eaecef;
+    --input-border: #e1e4e8;
+    --input-text: #24292e;
+    --icon-bg: #6a737d;
+    --nav-bottom-border: #d1d5da;
     --lightgrey:#d0caca9c;
     --color-text-link: #0366d6;
     --color-white: white;
@@ -159,7 +170,7 @@ body {
 }
 .user-resource-wrapper {
     margin: 0 auto;
-    width: 92%
+    width: 77%
 }
 .user-resource {
     display: flex;
@@ -212,6 +223,9 @@ body {
     border-radius: 17px;
     right: -57%;
 }
+.repo-search-container {
+    display: flex;
+}
 
 .user-info-wrapper .user-bio {
     margin-top: 10px;
@@ -230,6 +244,39 @@ body {
     margin-left: 0px !important;
 }
 
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 0px;
+    margin-top: 40px;
+    border-top: 1px solid var(--repo-border);
+    color: var(--primary-color);
+    margin: 0 auto;
+    width: 77%;
+}
+footer {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+}
+ul.footer {
+    display: flex;
+    justify-content: space-between;
+    width: 44%;
+}
+.copyright {
+    color: var(--body-text);
+}
+ul>li {
+    list-style: none;
+    text-decoration: none;
+}
+.footer-logo {
+    width: 10%;
+    display: flex;
+    justify-content: center;
+}
 .bio {
     font-size: 16.5px;
 }
@@ -461,7 +508,6 @@ body {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    /* background: red; */
 }
 .m-bg{
     display: none;
@@ -567,6 +613,33 @@ body {
 .repo_uname{
     margin-left: 10px;
 }
+.btn {
+    position: relative;
+    display: inline-block;
+    padding: 5px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid;
+    border-radius: 6px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #fafbfc;
+    border: 1px solid;
+    outline: none;
+    border-color: #1b1f2326;
+    color:#24292e;
+    transition: .2s cubic-bezier(.3,0,.5,1);
+    transition-property: color,background-color,border-color; 
+}
 /* MOBILE RESPONSIVENESS */
 @media screen and (max-width: 360px) {
     .profile_name {
@@ -611,9 +684,7 @@ body {
     .nav_menu_wrapper {
         flex-direction: column !important;
     }
-    .tab_svg {
-        display: none !important;
-    }
+   
     .repo_list_wrapper .repo_list{
         width: 100% !important;
     }
@@ -726,9 +797,11 @@ body {
     .repo_nav_menu {
         overflow: auto;
     }
-    .tabs_wrapper {
+    .tabs_wrapper  {
         width: 600px;
+        
     }
+   
     .header_wrapper .navbar .nav_menu_wrapper {
         flex: 0 0 0% !important;
         height: auto !important;
@@ -740,6 +813,7 @@ body {
         padding: 0px !important;
         padding-top: 11px !important;
         padding-bottom: 11px !important;
+        margin-right: 15px !important;
     }
     .tabs_content_container {
         margin-left: 0px !important;
@@ -763,9 +837,59 @@ body {
         margin-top: 20px;
     }
 }
-
-
-
+.profile-stats-flex {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 16px;
+    margin-top: 16px;
+}
+.stats-flex-inner {
+    display: flex;
+    align-items: center;
+}
+.mr-5 {
+    margin-right: 5px;
+}
+.stats-divider {
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: var(--body-text);
+}
+.stats-flex-inner {
+    display: flex;
+    align-items: center;
+}
+.stats-divider {
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: var(--body-text);
+}
+.stats-flex-inner {
+    display: flex;
+    align-items: center;
+}
+.stat-info {
+    font-weight: lighter;
+}
+.stats-number {
+    margin-right: 5px;
+    font-weight: 600;
+}
+.user-info-edit-container{
+    margin-top: 16px;
+}
+.user-info-edit-container  button {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
 
 .app_page_loader {
     min-height: calc(100vh - 90px);
