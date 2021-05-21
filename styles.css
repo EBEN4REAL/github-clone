@@ -648,6 +648,33 @@ ul>li {
     .repo_info_content span {
         font-size: 9px !important;
     }
+    .user-resource-wrapper{
+        width: 94%;
+    }
+    footer{
+        flex-flow: row wrap;
+    }
+    ul>li{
+        margin-right: 10px;
+    }
+    .footer-logo{
+        display: none;
+    }
+}
+@media screen and (max-width: 575px){
+    .user-resource-wrapper{
+        width: 94%;
+    }
+    footer{
+        flex-flow: row wrap;
+        width: 95%;
+    }
+    ul>li{
+        margin-right: 13px;
+    }
+    .footer-logo{
+        display: none;
+    }
 }
 @media screen and (max-width: 1024px) {
     .status_div {
